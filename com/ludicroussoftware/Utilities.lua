@@ -63,4 +63,27 @@ function Utilities.hasEventListener(self, event, callback)
 	return false
 end
 
+--[[ table.shuffle(t)
+
+	Shuffle the elements of an indexed array using
+	Fisher-Yates algorithm. Performs an 'in-place'
+	shuffle, overwriting the previous order of the
+	table.
+	
+	Parameters:
+	
+	t (required)		- table to be shuffled.
+
+--]]
+
+function Utilities.shuffleTable(t)
+	assert(t, "table.shuffle() expected a table, got nil")
+	local iterations = #t
+	local j
+	for i = iterations, 2, -1 do
+		j = math.random(i)
+		t[i], t[j] = t[j], t[i]
+	end
+end
+
 return Utilities

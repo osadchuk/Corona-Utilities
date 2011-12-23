@@ -11,6 +11,10 @@ local function fListener(event)
 	print("function listener", event.phase)
 end
 
+--
+-- demo code for hasEventListener
+--
+
 -- create table listener
 testObject.touch = tListener
 testObject:addEventListener("touch", testObject)
@@ -30,3 +34,19 @@ print("has table listener", hasTableListener)
 -- third parameter. E.g., test for any enterFrame event listener:
 local hasEnterFrameListener = Utilities.hasEventListener(testObject, "enterFrame")
 print("has enterFrame listener", hasEnterFrameListener)
+
+--
+-- demo code for table.shuffle
+--
+
+-- create a table for shuffling
+local myTable = {}
+for i = 1, 15 do
+	myTable[i] = i
+end
+
+-- seed the random number generator and shuffle the table
+math.randomseed(os.time())
+print(table.concat(myTable, ", "))
+Utilities.shuffleTable(myTable)
+print(table.concat(myTable, ", "))
