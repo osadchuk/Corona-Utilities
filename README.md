@@ -1,0 +1,1 @@
+A number of utility functions for working with the Corona SDK. Currently they're scattered all over my projects, and I'll be adding them to the repository as I think of them/rediscover them.
